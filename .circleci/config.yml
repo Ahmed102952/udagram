@@ -21,8 +21,6 @@ jobs:
           name: "backend deploy"
           command: "npm run backend:deploy"
   udagram-frontend: 
-   docker:
-      - image: cimg/base:stable
     steps: 
       - node/install
       - checkout
