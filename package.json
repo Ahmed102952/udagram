@@ -1,6 +1,6 @@
 {
  "scripts": {
   "backend:deploy": "cd ./udagram-api && npm install -f &&  npm run lint && npm run deploy",
-  "frontend:deploy": "cd ./udagram-frontend && npm install -f &&  npm run lint && npm run test && npm run deploy"
+  "frontend:deploy": "cd ./udagram-frontend && npm install -f &&  npm run lint && npm run deploy"
  }
 }
