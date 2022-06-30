@@ -10,12 +10,8 @@ orbs:
   aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
 jobs:
   udagram-api:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - node/install
       - checkout
@@ -24,6 +20,17 @@ jobs:
       - run:
           name: "backend deploy"
           command: "npm run backend:deploy"
+  udagram-frontend: 
+   docker:
+      - image: cimg/base:stable
+    steps: 
+      - node/install
+      - checkout
+      - aws-cli/setup
+      run: 
+        name: "frontend deploy"
+        command: "npm run frontend:deploy"
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -31,3 +38,4 @@ workflows:
   udagram:
       jobs:
         - udagram-api
+        - udagram-frontend
