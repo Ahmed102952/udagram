@@ -1,0 +1,15 @@
+{
+ 
+  "scriptsz": {
+    "start": "node ./www/app.js || node ./app.js",
+    "tsc": "npx tsc",
+    "dev": "npx ts-node-dev --respawn --transpile-only ./src/app.ts",
+    "prod": "npx tsc && node ./www/app.js",
+    "clean": "rm -rf www/ || true",
+    "clean:win": "rmdir /q /s \"www/\" || VER>NUL",
+    "deploy": "npm run build && eb list && eb use udagram-api && eb deploy",
+    "deploy:win": "npm run build:win && eb list && eb use udagram-api && eb deploy",
+    "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config || xcopy \"./src/config\" \"./www/config\" /I && cp -R .elasticbeanstalk www/.elasticbeanstalk || xcopy \"./.elasticbeanstalk\" \"./www/.elasticbeanstalk\" /I && cp .npmrc www/.npmrc ||copy \"./.npmrc\" \"www/\" && cp package.json www/package.json || copy \"./package.json\" \"www/\" && cd www && zip -r Archive.zip . || 7z a -tzip Archive.zip . && cd ../",
+    "build:win": "npm install . && npm run clean:win && tsc && xcopy \"./src/config\" \"./www/config\" /I && xcopy \"./.elasticbeanstalk\" \"./www/.elasticbeanstalk\" /I && copy \"./.npmrc\" \"www/\" && copy \"./package.json\" \"www/\" && cd ./www && 7z a -tzip Archive.zip . && cd .."
+  },
+}
