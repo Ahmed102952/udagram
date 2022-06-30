@@ -5,7 +5,7 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  udagram:
+  udagram api:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -19,4 +19,4 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - udagram
+      - udagram api
