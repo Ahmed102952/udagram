@@ -9,6 +9,9 @@ environment-defaults:
   Udgaramapi-env:
     branch: null
     repository: null
+  udagram-api:
+    branch: null
+    repository: null
 global:
   application_name: udgaram-api
   default_ec2_keyname: null
