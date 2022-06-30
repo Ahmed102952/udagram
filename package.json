@@ -1,6 +1,20 @@
 {
- "scripts": {
-  "backend:deploy": "cd ./udagram-api && npm install -f &&  npm run lint && npm run deploy",
-  "frontend:deploy": "cd ./udagram-frontend && npm install -f &&  npm run lint && npm run deploy"
- }
+  "scripts": {
+    "backend:deploy": "cd ./udagram-api && npm install -f &&  npm run lint && npm run deploy",
+    "frontend:deploy": "cd ./udagram-frontend && npm install -f &&  npm run lint && npm run deploy"
+  },
+  "name": "udagram",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed102952/udagram.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahmed102952/udagram/issues"
+  },
+  "homepage": "https://github.com/Ahmed102952/udagram#readme",
+  "description": ""
 }
