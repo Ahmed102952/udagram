@@ -21,13 +21,15 @@ jobs:
           name: "backend deploy"
           command: "npm run backend:deploy"
   udagram-frontend: 
+    docker:
+      - image: cimg/base:stable
     steps: 
       - node/install
       - checkout
       - aws-cli/setup
-      run: 
-        name: "frontend deploy"
-        command: "npm run frontend:deploy"
+      - run:
+          name: "backend deploy"
+          command: "npm run backend:deploy"
 
 
 # Invoke jobs via workflows
