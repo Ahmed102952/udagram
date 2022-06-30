@@ -4,13 +4,13 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "ng": "SET NODE_OPTIONS=--openssl-legacy-provider ng",
+    "ng": "SET NODE_OPTIONS=--openssl-legacy-provider && ng",
     "start": "SET NODE_OPTIONS=--openssl-legacy-provider && ng serve",
     "build": "SET NODE_OPTIONS=--openssl-legacy-provider && ng build",
-    "deploy": "npm install -f && npm run build && chmod +x bin/deploy.sh && bin/deploy.sh",
-    "test": "SET NODE_OPTIONS=--openssl-legacy-provider && ng test --watch=false",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "deploy": "npm run build && chmod +x bin/deploy.sh && bin/deploy.sh",
+    "test": "SET NODE_OPTIONS=--openssl-legacy-provider  && ng test --watch=false",
+    "lint": "SET NODE_OPTIONS=--openssl-legacy-provider && ng lint", 
+    "e2e": "SET NODE_OPTIONS=--openssl-legacy-provider && ng e2e"
   },
   "private": true,
   "dependencies": {
