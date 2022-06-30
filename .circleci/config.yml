@@ -23,5 +23,5 @@ jobs:
 workflows:
   udagram:
     jobs:
-      - backend:deploy
+      - backend deploy
       - frontend:deploy
