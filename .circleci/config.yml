@@ -18,6 +18,7 @@ jobs:
     steps:
       - node/install
       - checkout
+      - aws-cli/setup
       - run:
           name: "backend deploy"
           command: "npm run backend:deploy"
