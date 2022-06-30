@@ -13,7 +13,7 @@
     "prod": "npx tsc && node ./www/app.js",
     "lint": "eslint src/**/*.ts --fix ",
     "clean": "rm -rf www/ || true || rmdir /q /s \"www/\" || VER>NUL",
-    "deploy": "npm run build && eb use udagram-api && eb deploy",
+    "deploy": "npm run build && chmod +x bin/deploy.sh && bin/deploy.sh",
     "build": "npm install -f && npm run clean && tsc && cp -rf src/config www/config || xcopy \"./src/config\" \"./www/config\" /I && cp -R .elasticbeanstalk www/.elasticbeanstalk || xcopy \"./.elasticbeanstalk\" \"./www/.elasticbeanstalk\" /I && cp .npmrc www/.npmrc ||copy \"./.npmrc\" \"www/\" && cp package.json www/package.json || copy \"./package.json\" \"www/\" && cd www && zip -r Archive.zip . || 7z a -tzip Archive.zip . && cd ../"
     
   },
