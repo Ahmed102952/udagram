@@ -42,4 +42,4 @@ workflows:
         - udagram-frontend
 Branches:
   only: 
-     -  main
+     -  master
