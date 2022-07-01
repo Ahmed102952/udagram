@@ -1,7 +1,11 @@
 {
   "scripts": {
-    "backend:deploy": "cd ./udagram-api && npm install -f &&  npm run lint && npm run deploy",
-    "frontend:deploy": "cd ./udagram-frontend && npm install -f &&  npm run lint && npm run deploy"
+    "backend:deploy": "cd ./udagram-api && npm install -f && npm run test && npm run lint && npm run deploy",
+    "backend:build": "cd ./udagram-api && npm install -f && npm run build",
+    "backend:test": "cd ./udagram-api && npm install -f && npm run test",
+    "frontend:deploy": "cd ./udagram-frontend && npm install -f && npm run test && npm run lint && npm run deploy",
+    "frontend:build": "cd ./udagram-frontend && npm install -f && npm run build",
+    "frontend:test": "cd ./udagram-frontend && npm install -f && npm run test"
   },
   "name": "udagram",
   "version": "1.0.0",

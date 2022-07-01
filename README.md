@@ -61,3 +61,5 @@ The dependencies required to run:
 
 `backend:deploy` to deploy udagram api to EB.</br>
 `frontend:deploy` to deploy udagram front end to S3.
+
+link to deployed frontend: <http://udagram-mc456.s3-website-us-east-1.amazonaws.com>
