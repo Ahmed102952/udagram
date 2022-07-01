@@ -40,3 +40,6 @@ workflows:
       jobs:
         - udagram-api
         - udagram-frontend
+Branches:
+  only:
+     -  main
